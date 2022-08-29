@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+    <meta http-equiv="expires" content="0" />
+    <link type="image/png" href="./static/logo.png" rel="shortcut icon" />
+    <script type="text/javascript">
+      // Parses URL parameters. Supported parameters are:
+      // - lang=xy: Specifies the language of the user interface.
+      // - touch=1: Enables a touch-style user interface.
+      // - storage=local: Enables HTML5 local storage.
+      // - chrome=0: Chromeless mode.
+      var urlParams = (function(url) {
+        var result = new Object();
+        var idx = url.lastIndexOf("?");
+
+        if (idx > 0) {
+          var params = url.substring(idx + 1).split("&");
+
+          for (var i = 0; i < params.length; i++) {
+            idx = params[i].indexOf("=");
+
+            if (idx > 0) {
+              result[params[i].substring(0, idx)] = params[i].substring(
+                idx + 1
+              );
+            }
+          }
+        }
+        return result;
+      })(window.location.href);
+
+      // Default resources are included in grapheditor resources
+      mxLoadResources = false;
+    </script>
+    <!-- 流程图 -->
+    <title></title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./static/graphEditor/styles/grapheditor.css"
+    />
+    <script
+      type="text/javascript"
+      src="./static/graphEditor/js/Init.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./static/graphEditor/deflate/pako.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./static/graphEditor/deflate/base64.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./static/graphEditor/jscolor/jscolor.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./static/graphEditor/sanitizer/sanitizer.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./static/graphEditor/js/mxClient.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./static/graphEditor/js/EditorUi.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./static/graphEditor/js/Editor.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./static/graphEditor/js/Sidebar.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./static/graphEditor/js/Graph.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./static/graphEditor/js/Format.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./static/graphEditor/js/Shapes.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./static/graphEditor/js/Actions.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./static/graphEditor/js/Menus.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./static/graphEditor/js/Toolbar.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./static/graphEditor/js/Dialogs.js"
+    ></script>
+  </head>
+  <style>
+    * {
+      font-family: "PingFang SC", "Helvetica Neue", Helvetica,
+        "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    }
+    html,
+    body,
+    #app {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      color: #2c3e50;
+      background-color: #fafafa;
+    }
+  </style>
+  <script>
+    var isDevelop = false;
+    if (window.location.href.indexOf("localhost") != -1) {
+      domain = "http://localhost:9000";
+      isDevelop = true;
+    } else {
+      domain = window.location.protocol + "//" + window.location.hostname;
+    }
+  </script>
+  <body style="overflow: hidden">
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

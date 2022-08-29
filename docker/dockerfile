@@ -1,0 +1,6 @@
+FROM alpine:3.16.2
+COPY ../build/release/znj /bin 
+COPY ../build/release/etc/znj.yaml /etc
+EXPOSE 9000
+WORKDIR /bin
+CMD /bin/znj

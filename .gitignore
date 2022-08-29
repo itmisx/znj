@@ -1,0 +1,7 @@
+.DS_Store
+build/release
+upload
+logs
+web_src/dist
+web_src/node_modules
+web_src/yarn.lock

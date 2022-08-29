@@ -1,0 +1,32 @@
+#应用配置
+http_port: ":9000"
+default_lang: zh
+upload_limit:
+allow_headers:
+  - "Authorization"
+  - "Token"
+allow_methods:
+  - "OPTIONS"
+# mysql配置
+mysql:
+  host: "mysql"
+  port: "3306"
+  username: "root"
+  password: "123456"
+  database: "znj"
+  debug: true
+logger:
+  debug: true
+  output: "console"
+  file: "./logs/run.log"
+  max_size: 100 #mb
+  rotate: "0 0 0 * * *" #每天 0 零点切割日志
+# redis配置
+redis:
+  host: "redis"
+  protocol: "tcp"
+  port: "6379"
+# 系统初始化管理员
+admin_user:
+  username: "admin"
+  password: "123456"
