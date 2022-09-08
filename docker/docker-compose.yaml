@@ -32,8 +32,8 @@ services:
     ports:
       - 9000:9000
     # 自定义配置文件
-    # volumes:
-    #  - ./etc/znj.yaml:/etc/znj.yaml
+    volumes:
+      - ./etc/znj.yaml:/etc/znj.yaml
     restart: always
     logging:
       driver: json-file
