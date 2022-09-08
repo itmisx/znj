@@ -36,7 +36,7 @@ cd znj/docker
 docker-compose up -d
 ```
 
-> docker-comose 参考
+> docker-compose 参考
 
 ```yaml
 version: "3.7"
