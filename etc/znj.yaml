@@ -9,7 +9,7 @@ allow_methods:
   - "OPTIONS"
 # mysql配置
 mysql:
-  host: "mysql"
+  host: "127.0.0.1"
   port: "3306"
   username: "root"
   password: "123456"
@@ -23,7 +23,7 @@ logger:
   rotate: "0 0 0 * * *" #每天 0 零点切割日志
 # redis配置
 redis:
-  host: "redis"
+  host: "127.0.0.1"
   protocol: "tcp"
   port: "6379"
 # 系统初始化管理员
